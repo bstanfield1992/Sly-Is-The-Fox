@@ -3,11 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Code Quiz</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./assets/css/style.css" />
-  <title>Document</title>
 </head>
+
 <body>
+
+  <header>
+    <nav class="nav-wrapper">
+      <div class="hi-score">
+        <h3 id="view-highscores" class="hi-score-title" onclick="printHighscores()">View High Scores</h3>
+      </div>
+      <div>
+        <h3 class="time">Time: <span id="time">0</span></h3>
+      </div>
+    </nav>
+  </header>
+
+
   
+  <script src="./assets/js/questions.js"></script>
   <script src="./assets/js/script.js"></script>
 </body>
 </html>
