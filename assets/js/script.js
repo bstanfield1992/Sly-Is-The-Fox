@@ -29,7 +29,6 @@ var hideTime = document.querySelector(".time")
 var foxImgEl = document.querySelector("#foxImg")
 
 
-
 // function to hide uneeded screens on load screen
 function pageLoad() {
   //only show start page. Hide other content.
@@ -47,24 +46,25 @@ function pageLoad() {
 
 /* GLOBAL FUNCTIONS */
 
-
-
-// function to hide uneeded screens on load screen
-function pageLoad() {
-  //only show start page. Hide other content.
+// start quiz/game function 
+function startQuiz() {
+  //hide start screen and high score screen
+  titleScreen.setAttribute("class", "hide");
   highscoreScreen.setAttribute("class", "hide");
-  quizScreen.setAttribute("class", "hide");
   scoreDisplay.setAttribute("class", "hide");
 
-  if (startQuiz == true){
-    return;
-  }
+  //unhide questions section 
+  quizScreen.setAttribute("class", "show");
 
+  // start timer 
+  timer = setInterval(countdown, 1000);
+
+  // show starting time
+  var time = 75;
+  timerCountdown.textContent = time;
+
+  getQuestion();
 }
-
-
-
-/* GLOBAL FUNCTIONS */
 
 // timer countdowns one second at a time function
 function countdown() {
@@ -76,7 +76,6 @@ function countdown() {
     quizEnd();
   }
 }
-
 
 
 // function to get the question
@@ -110,7 +109,6 @@ function getQuestion() {
   
 };
 
-
 // function to increase or decrease time with quesiton answer button click
 function questionClick() {
   // check if guessed wrong
@@ -140,7 +138,6 @@ function questionClick() {
     feedbackKey.textContent = "Correct!";
   };
 
-
   // flash right/wrong feedback on page
   feedbackKey.setAttribute("class", "key");
   setTimeout(function() {
@@ -159,7 +156,6 @@ function questionClick() {
 }
 
 
-
 // end quiz function 
 function quizEnd () {
   // stop timer
@@ -175,6 +171,7 @@ function quizEnd () {
   // hide questions section
   quizScreen.setAttribute("class", "hide");
 }
+
 
 
 // function to save highscore 
@@ -207,7 +204,6 @@ function checkForEnter(event) {
     saveHighscore();
   }
 }
-
 
 // function to display high scores 
 function printHighscores() {
@@ -257,5 +253,3 @@ initials.onkeyup = checkForEnter;
 
 
 pageLoad();
-
-
