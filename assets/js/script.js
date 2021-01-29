@@ -109,3 +109,33 @@ function getQuestion() {
 };
 
 
+// function to increase or decrease time with quesiton answer button click
+function questionClick() {
+  // check if guessed wrong
+  
+  if (this.value !== questions[currentQuestionIndex].correct) {
+    //penalize time
+    time -= 10;
+
+    if (time < 0) {
+      time = 0;
+    }
+
+    // display new time on page
+    timerCountdown.textContent = time;
+
+    feedbackKey.textContent = "Wrong!";
+  } if (this.value == questions[currentQuestionIndex].correct) {
+    //Give extra time
+    time += 10;
+
+    if (time < 0) {
+      time = 0;
+    }
+
+    // display new time on page
+    timerCountdown.textContent = time;
+    feedbackKey.textContent = "Correct!";
+  };
+
+
