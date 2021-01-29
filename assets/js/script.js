@@ -245,4 +245,15 @@ document.getElementById("clear-btn").onclick = clearHighscores;
 
 
 
+// user clicks button to submit initials
+initialBtn.onclick = saveHighscore;
+  
+// user clicks button to start quiz
+startQuizBtn.onclick = startQuiz;
+
+initials.onkeyup = checkForEnter;
+
+
+pageLoad();
+
 
