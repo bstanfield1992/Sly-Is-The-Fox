@@ -235,4 +235,14 @@ function printHighscores() {
   });
 }
 
+// function to clear high scores
+function clearHighscores() {
+  window.localStorage.removeItem("highscores");
+  window.location.reload();
+}
+
+document.getElementById("clear-btn").onclick = clearHighscores;
+
+
+
 
