@@ -157,3 +157,22 @@ function questionClick() {
 }
 
 
+
+// end quiz function 
+function quizEnd () {
+  // stop timer
+  clearInterval(timer);
+
+  //show end screen
+  highscoreScreen.setAttribute("class", "show");
+
+  // show final score 
+  var finalScore = document.querySelector("#final-score");
+  finalScore.textContent = time;
+
+  // hide questions section
+  quizScreen.setAttribute("class", "hide");
+}
+
+
+
