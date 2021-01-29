@@ -63,3 +63,15 @@ function pageLoad() {
 
 
 /* GLOBAL FUNCTIONS */
+
+// timer countdowns one second at a time function
+function countdown() {
+  time--;
+  timerCountdown.textContent = time;
+
+  // check if user ran out of time
+  if (time <= 0) {
+    quizEnd();
+  }
+}
+
