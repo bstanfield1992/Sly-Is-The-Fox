@@ -25,6 +25,8 @@ var highscoreScreen = document.querySelector("#highscore")
 var scoreDisplay = document.querySelector("#highscore-display")
 var hideHighScoresLink = document.querySelector("#view-highscores")
 var hideTime = document.querySelector(".time")
+// Fox Img Element 
+var foxImgEl = document.querySelector("#foxImg")
 
 
 
