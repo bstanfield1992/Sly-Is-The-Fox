@@ -25,3 +25,41 @@ var highscoreScreen = document.querySelector("#highscore")
 var scoreDisplay = document.querySelector("#highscore-display")
 var hideHighScoresLink = document.querySelector("#view-highscores")
 var hideTime = document.querySelector(".time")
+
+
+
+// function to hide uneeded screens on load screen
+function pageLoad() {
+  //only show start page. Hide other content.
+  highscoreScreen.setAttribute("class", "hide");
+  quizScreen.setAttribute("class", "hide");
+  scoreDisplay.setAttribute("class", "hide");
+
+  if (startQuiz == true){
+    return;
+  }
+
+}
+
+
+
+/* GLOBAL FUNCTIONS */
+
+
+
+// function to hide uneeded screens on load screen
+function pageLoad() {
+  //only show start page. Hide other content.
+  highscoreScreen.setAttribute("class", "hide");
+  quizScreen.setAttribute("class", "hide");
+  scoreDisplay.setAttribute("class", "hide");
+
+  if (startQuiz == true){
+    return;
+  }
+
+}
+
+
+
+/* GLOBAL FUNCTIONS */
