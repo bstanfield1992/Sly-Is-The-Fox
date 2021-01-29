@@ -139,3 +139,21 @@ function questionClick() {
   };
 
 
+  // flash right/wrong feedback on page
+  feedbackKey.setAttribute("class", "key");
+  setTimeout(function() {
+    feedbackKey.setAttribute("class", "key hide");
+  }, 1000);
+
+  // move to next question
+  currentQuestionIndex++;
+
+  // check if we've run out of questions
+  if (currentQuestionIndex === questions.length) {
+    quizEnd();
+  } else {
+    getQuestion();
+  }
+}
+
+
