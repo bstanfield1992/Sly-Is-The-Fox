@@ -75,3 +75,37 @@ function countdown() {
   }
 }
 
+
+
+// function to get the question
+function getQuestion() {
+  var currentQuestion = questions[currentQuestionIndex];
+  console.log(currentQuestion)
+
+  // update title with current questions
+  var titleEl = document.getElementById("quiz-question");
+  titleEl.textContent = currentQuestion.quizQuestion;
+
+  // clear out any old question choices
+  answersEl.innerHTML = "";
+
+  // Loop over choices
+  currentQuestion.answers.forEach(function(answer, i) {
+    // create new button for each choice
+    var answerNode = document.createElement("button");
+    answerNode.setAttribute("class", "btn");
+    answerNode.setAttribute("value", answer)
+
+    answerNode.textContent = i +1 + ". " + answer;
+
+    // attach click event listener to each answer
+    answerNode.onclick = questionClick;
+
+    // display on the page 
+    answersEl.appendChild(answerNode);
+  });
+   
+  
+};
+
+
