@@ -77,16 +77,17 @@ for (var i = 0; i < 10; i++) {
 // console.log(questionResults[i].correct_answer)
   var incorrect_answersVar = questionResults[i].incorrect_answers + ',' + questionResults[i].correct_answer;
   var correct_answerVar = questionResults[i].correct_answer;
+  var questionsString = questionResults[i].question;
   // console.log(incorrect_answersVar.split(',' , 4));
 
   questions[i] = {
-  quizQuestion: questionResults[i].question ,
-  answers: incorrect_answersVar.split(',' , 4),
+  quizQuestion: questionsString.toString() ,
+  answers: incorrect_answersVar.split(',' , 4) ,
   correct: correct_answerVar.toString()
   }
   
 }
-console.log(questions[0].correct);
+
     getQuestion();
   }
 
@@ -115,13 +116,13 @@ console.log(questions[0].correct);
     answersEl.innerHTML = "";
 
     // Loop over choices
-    currentQuestion.answers.forEach(function(answer, i) {
+    currentQuestion.answers.forEach(function(answers, i) {
       // create new button for each choice
       var answerNode = document.createElement("button");
       answerNode.setAttribute("class", "btn");
-      answerNode.setAttribute("value", currentQuestion.answer)
-
-      answerNode.textContent = i +1 + ". " + answer;
+      answerNode.setAttribute("value", currentQuestion.answers)
+      console.log(answers);
+      answerNode.textContent = i +1 + ". " + answers;
 
       // attach click event listener to each answer
       answerNode.onclick = questionClick;
@@ -136,7 +137,8 @@ console.log(questions[0].correct);
   // function to increase or decrease time with quesiton answer button click
   function questionClick() {
     // check if guessed wrong
-    questions[currentQuestionIndex].correct;
+    console.log(questions[currentQuestionIndex].correct);
+
     if (this.value !== questions[currentQuestionIndex].correct) {
       //penalize time
       time -= 10;
@@ -149,7 +151,7 @@ console.log(questions[0].correct);
       timerCountdown.textContent = time;
 
       feedbackKey.textContent = "Wrong!";
-    } if (this.value === questions[currentQuestionIndex].correct) {
+    } if (this.value == questions[currentQuestionIndex].correct) {
       //Give extra time
       time += 10;
 
@@ -172,7 +174,7 @@ console.log(questions[0].correct);
     currentQuestionIndex++;
 
     // check if we've run out of questions
-    if (currentQuestionIndex === questions.length) {
+    if (currentQuestionIndex == questions.length) {
       quizEnd();
     } else {
       getQuestion();
