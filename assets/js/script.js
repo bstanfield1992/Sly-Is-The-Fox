@@ -70,24 +70,8 @@ fetch('https://opentdb.com/api.php?amount=10&type=multiple')
     timerCountdown.textContent = time;
 
 
-for (var i = 0; i < 10; i++) {
-  
-// console.log(questionResults[i].question);
-// console.log(questionResults[i].incorrect_answers)
-// console.log(questionResults[i].correct_answer)
-  var incorrect_answersVar = questionResults[i].incorrect_answers + ',' + questionResults[i].correct_answer;
-  var correct_answerVar = questionResults[i].correct_answer;
-  var questionsString = questionResults[i].question;
-  // console.log(incorrect_answersVar.split(',' , 4));
 
-  questions[i] = {
-  quizQuestion: questionsString.toString() ,
-  answers: incorrect_answersVar.split(',' , 4) ,
-  correct: correct_answerVar.toString()
-  }
-  
-}
-
+  console.log(questions);
     getQuestion();
   }
 
@@ -105,6 +89,35 @@ for (var i = 0; i < 10; i++) {
 
   // function to get the question
   function getQuestion() {
+
+
+    for (var i = 0; i < 10; i++) {
+  
+      // console.log(questionResults[i].question);
+      // console.log(questionResults[i].incorrect_answers)
+      // console.log(questionResults[i].correct_answer)
+        var answersVar = [];
+        var correct_answerVar = questionResults[i].correct_answer;
+        var questionsString = questionResults[i].question;
+        // console.log(incorrect_answersVar.split(',' , 4));
+      
+        for (var q = 0; q < 3; q++) {
+      
+          answersVar.push(questionResults[i].incorrect_answers[q]);
+        }
+      
+        answersVar.push(correct_answerVar);
+        
+        questions[i] = {
+        quizQuestion: questionsString.toString() ,
+        correct: correct_answerVar.toString() ,
+        answers: answersVar
+        
+        }
+        
+      }
+
+
     var currentQuestion = questions[currentQuestionIndex];
     console.log(currentQuestion)
 
@@ -120,7 +133,7 @@ for (var i = 0; i < 10; i++) {
       // create new button for each choice
       var answerNode = document.createElement("button");
       answerNode.setAttribute("class", "btn");
-      answerNode.setAttribute("value", currentQuestion.answers)
+      answerNode.setAttribute("value", currentQuestion.answers);
       console.log(answers);
       answerNode.textContent = i +1 + ". " + answers;
 
@@ -151,7 +164,7 @@ for (var i = 0; i < 10; i++) {
       timerCountdown.textContent = time;
 
       feedbackKey.textContent = "Wrong!";
-    } if (this.value == questions[currentQuestionIndex].correct) {
+    } if (this.value === questions[currentQuestionIndex].correct) {
       //Give extra time
       time += 10;
 
