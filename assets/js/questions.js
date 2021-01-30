@@ -1,37 +1,41 @@
-var questions = [
-  {
-    quizQuestion: "Arrays in JavaScript can be used to store _____.",
-    answers: ["numbers and strings", "other arrays", "booleans", "all of the above"],
-    correct:"all of the above"
-  },
-  {
-    quizQuestion: "String Values must be enclosed within ____ when being assigned to variables.",
-    answers: ["commas", "curly brackets", "quotes", "parenthesis"],
-    correct:"quotes"
-  },
-  {
-    quizQuestion: "The condition in an if/else statement is enclosed with ____.",
-    answers: ["quotes", "curly brackets", "parenthesis", "square brackets"],
-    correct:"curly brackets"
-  },
-  {
-    quizQuestion: "Commonly used data types DO NOT include:",
-    answers: ["strings", "booleans", "alerts", "numbers"],
-    correct:"alerts"
-  },
-  {
-    quizQuestion: "A very useful tool for users during development and debugging for printing content to the debugger is:",
-    answers: ["Javascript", "terminal/bash", "for loops", "console log"],
-    correct:"console log"
-  },
+// var questions = [
+//   {
+//     quizQuestion: "Arrays in JavaScript can be used to store _____.",
+//     answers: ["numbers and strings", "other arrays", "booleans", "all of the above"],
+//     correct:"all of the above"
+//   },
+//   {
+//     quizQuestion: "String Values must be enclosed within ____ when being assigned to variables.",
+//     answers: ["commas", "curly brackets", "quotes", "parenthesis"],
+//     correct:"quotes"
+//   },
+//   {
+//     quizQuestion: "The condition in an if/else statement is enclosed with ____.",
+//     answers: ["quotes", "curly brackets", "parenthesis", "square brackets"],
+//     correct:"curly brackets"
+//   },
+//   {
+//     quizQuestion: "Commonly used data types DO NOT include:",
+//     answers: ["strings", "booleans", "alerts", "numbers"],
+//     correct:"alerts"
+//   },
+//   {
+//     quizQuestion: "A very useful tool for users during development and debugging for printing content to the debugger is:",
+//     answers: ["Javascript", "terminal/bash", "for loops", "console log"],
+//     correct:"console log"
+//   },
   
-]
+// ]
 
+// console.log(questions);
 
-fetch('https://opentdb.com/api.php?amount=10&type=multiple')
-.then(function(response) {
-    return response.json();
-})
-.then(function(response) {
-    console.log(response)
-})
+// var questions = [];
+// for (var i = 0; i < 10; i++) {
+//   var questionResults = response.results;
+// console.log(questionResults[i]);
+//   questions[i] = {
+//   quizQuestion: [questionResults[i].question] ,
+//   answers: [questionResults[i].incorrect_answers + questionResults[i].correct_answers] ,
+//   correct: correct_answers
+//   }
+// }
