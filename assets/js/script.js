@@ -80,10 +80,12 @@ fetch('https://opentdb.com/api.php?amount=10&type=multiple')
           answersVar.push(questionResults[i].incorrect_answers[q]);
         }
         answersVar.push(questionResults[i].correct_answer);
+        var randomAnswers = randomizeAnswers(answersVar);
+        console.log(randomAnswers);
         questions[i] = {
           quizQuestion: questionsString.toString(),
           correct: questionResults[i].correct_answer,
-          answers: answersVar
+          answers: randomAnswers
         }
         console.log(typeof questionResults[i].correct_answer);
       }
@@ -229,3 +231,13 @@ fetch('https://opentdb.com/api.php?amount=10&type=multiple')
     pageLoad();
     console.log(response);
   })
+
+  function randomizeAnswers(answers) {
+    var random = [];
+    for (var i = 0; i < 4; i++) {
+      var randomNumber = Math.floor(Math.random() * answers.length);
+      random.push(answers[randomNumber]);
+      answers.splice(randomNumber, 1);
+    }
+    return random;
+  }
