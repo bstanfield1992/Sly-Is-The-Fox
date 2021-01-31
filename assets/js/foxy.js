@@ -4,11 +4,12 @@ fetch('https://randomfox.ca/floof/')
 })
 .then(function(response) {
     console.log(response)
-    //      var body = document.body;
-    // var div1 = document.createElement('div');
-    // var image = response.image;
-    // var imageEl = document.createElement('img');
-    // body.appendChild(div1);
-    // imageEl.setAttribute('src', image);
-    // div1.appendChild(imageEl);
+         var body = document.body;
+    var fox = document.getElementById('foxImg');
+    var image = response.image;
+    var imageEl = document.createElement('img');
+    body.appendChild(fox);
+    imageEl.setAttribute('src', image);
+    imageEl.setAttribute('class', 'fox-style')
+    fox.appendChild(imageEl);
 })
