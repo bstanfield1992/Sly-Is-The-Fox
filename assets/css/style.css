@@ -1,15 +1,17 @@
 :root {
-  --primary-color: rgb(100, 6, 177);
-  --secondary-color: rgb(207, 99, 240);
-  --background-color: rgb(255, 255, 255);
-  --accent-color: rgba(161, 159, 159, 0.794);
-  --black-color: rgb(2, 1, 1); 
+  --primary-color: rgb(224, 122, 95);
+  --secondary-color: rgb(242, 204, 143);
+  --background-color: rgb(61, 64, 91);
+  --accent-color: rgba(129, 178, 154, 0.794);
+  --font-color: rgb(244, 241, 222); 
+  --btn-hover: rgb(94, 177, 191);
 }
 
 body {
 background: var(--background-color);
+color: var(--font-color);
 box-sizing: border-box;
-margin:10px 2rem;
+margin: 0px;
 font-family: 'Roboto', sans-serif;
 }
 
@@ -17,6 +19,17 @@ header nav, .nav-wrapper {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  margin: 10px;
+}
+
+h1, h3 {
+  color: var(--secondary-color);
+  margin: 10px;
+
+} 
+
+.font {
+  color: var(--secondary-color);
 }
 
 header, nav, a, .hi-score {
@@ -25,7 +38,7 @@ header, nav, a, .hi-score {
 }
 
 header, nav, .time {
-  color: var(--black-color)
+  color: var(--font-color);
 }
 
 main, section, .quiz-wrapper {
@@ -39,6 +52,7 @@ main, section, .quiz-wrapper {
 
 .start-quiz {
   text-align: center;
+  margin: 10px;
 }
 
 div p {
@@ -46,7 +60,7 @@ div p {
 }
 
 div .startbtn {
-  color: var(--background-color);
+  color: var(--font-color);
   background-color: var(--primary-color);
   border: none;
   padding: 5px 20px;
@@ -56,14 +70,18 @@ div .startbtn {
 }
 
 div .startbtn:hover {
-  background-color: var(--secondary-color);
+  background-color: var(--btn-hover);
+}
+
+.question-mini, .highscore {
+  margin: 10px;
 }
 
 
 div .btn {
   display: flex;
   flex-direction: column;
-  color: var(--background-color);
+  color: var(--font-color);
   background-color: var(--primary-color);
   border: none;
   padding: 5px 20px;
@@ -73,7 +91,7 @@ div .btn {
 }
 
 div .btn:hover {
-  background-color: var(--secondary-color);
+  background-color: var(--btn-hover);
 }
 
 
@@ -96,4 +114,18 @@ border-top: 1px solid var(--accent-color);
   display: block;
 }
 
+.fox-style {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: auto;
+  height: 250px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  border-radius: 10px;
+  border-style: groove;
+  border-width: 2px;
+  border-color:var(--accent-color);
+  box-shadow: 0px 0px 35px 0px var(--accent-color); 
+}
 
