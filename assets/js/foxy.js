@@ -3,7 +3,7 @@ fetch('https://randomfox.ca/floof/')
     return response.json();
 })
 .then(function(response) {
-    console.log(response)
+    // console.log(response)
          var body = document.body;
     var fox = document.getElementById('foxImg');
     var image = response.image;
@@ -89,4 +89,4 @@ var foxFacts = [
     
 ];
 
-console.log(foxFacts);
+// console.log(foxFacts);
