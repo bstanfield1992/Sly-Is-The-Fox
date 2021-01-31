@@ -83,8 +83,8 @@ fetch('https://opentdb.com/api.php?amount=10&type=multiple')
         var randomAnswers = randomizeAnswers(answersVar);
         console.log(randomAnswers);
         questions[i] = {
-          quizQuestion: questionsString.replace(/&quot;/g, '\"').replace(/&#039;/g, '\'').replace(/&eacute;/g, 'é').replace(/&uuml;/g, 'ü') ,
-          correct: questionResults[i].correct_answer.replace(/&quot;/g, '\"').replace(/&#039;/g, '\'').replace(/&eacute;/g, 'é').replace(/&uuml;/g, 'ü') ,
+          quizQuestion: questionsString.replace(/&quot;/g, '\"').replace(/&#039;/g, '\'').replace(/&eacute;/g, 'é').replace(/&uuml;/g, 'ü').replace(/&ouml;/g, 'ö').replace(/&amp;/g, '&').replace(/&iacute;/g, 'í') ,
+          correct: questionResults[i].correct_answer.replace(/&quot;/g, '\"').replace(/&#039;/g, '\'').replace(/&eacute;/g, 'é').replace(/&uuml;/g, 'ü').replace(/&ouml;/g, 'ö').replace(/&amp;/g, '&').replace(/&iacute;/g, 'í') ,
           answers: randomAnswers
         }
         console.log(typeof questionResults[i].correct_answer);
@@ -236,9 +236,9 @@ fetch('https://opentdb.com/api.php?amount=10&type=multiple')
     var random = [];
     for (var i = 0; i < 4; i++) {
       var randomNumber = Math.floor(Math.random() * answers.length);
-      random.push(answers[randomNumber].replace(/&quot;/g, '\"').replace(/&#039;/g, '\'').replace(/&eacute;/g, 'é').replace(/&uuml;/g, 'ü'));
+      random.push(answers[randomNumber].replace(/&quot;/g, '\"').replace(/&#039;/g, '\'').replace(/&eacute;/g, 'é').replace(/&uuml;/g, 'ü').replace(/&ouml;/g, 'ö').replace(/&amp;/g, '&').replace(/&iacute;/g, 'í'));
       answers.splice(randomNumber, 1);
     }
     return random;
   }
-  ü
+  
