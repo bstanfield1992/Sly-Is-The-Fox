@@ -10,7 +10,7 @@ fetch('https://randomfox.ca/floof/')
     var foxImgEl = document.createElement('img');
     body.appendChild(fox);
     foxImgEl.setAttribute('src', image);
-    foxImgEl.setAttribute('class', 'fox-style')
+    foxImgEl.className = "fox-style wiggle"
     fox.appendChild(foxImgEl);
 })
 

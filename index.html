@@ -38,14 +38,14 @@
     <section class="quiz-wrapper">
       <!-- Quiz Question & Quiz Start Button (will disable this once quiz starts and use bottom section)-->
       <div id="start-quiz" class="start-quiz" >
-        <h3>
+        <h3 class="wiggle">
           Sly Is The Fox Trivia Challenge! 
         </h3>
         <!-- Opening page info -->
         <p>
           Try to answer the following random trivia questions within the time limit given. Keep in mind that incorrect answers will penalize your score/time by 10 seconds! Correct answers will increase your score/time by 10 seconds! Good Luck!
         </p>
-        <button id="start-quiz-btn" class="startbtn pulse">Start Quiz</button>
+        <button id="start-quiz-btn" class="startbtn wiggle pulse">Start Quiz</button>
       </div>
 
       <!-- Quiz Questions after it starts Quiz Answer Buttons -->
@@ -69,7 +69,7 @@
         <h5 class="highscore">Your final score is <span id="final-score">0</span></h5>
         <h5 class="highscore font" for="initials-area">Save Your Initials:</h5>
         <input class="highscore" type="text" name="initials-area" maxlength="4" id="initials"><label class="highscore" for="textarea1">Enter your intials above:</label>
-        <button id="initials-submit-button"  class="btn-custom-in pulse" type="submit" name="action">Submit <i class="material-icons right">save</i>
+        <button id="initials-submit-button"  class="btn-custom-in pulse wiggle" type="submit" name="action">Submit <i class="material-icons right">save</i>
         </button>
       </div>
 
@@ -78,8 +78,8 @@
         <div id="scores">
           <h4 class="font highscore">Highscores:</h4>
           <ol class="highscore" id="display-scores"></ol>
-          <a href="./index.html"><button id="return-btn" class="startbtn pulse">Play Again</button></a>
-          <button id="clear-btn" class="startbtn pulse">Clear Highscores</button>
+          <a href="./index.html"><button id="return-btn" class="startbtn wiggle">Play Again</button></a>
+          <button id="clear-btn" class="startbtn">Clear Highscores</button>
         </div>
       </div>
 
