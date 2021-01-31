@@ -8,21 +8,27 @@
 }
 
 body {
-background: var(--background-color);
+  background: #43C6AC;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #191654, #43C6AC);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #191654, #43C6AC); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  
+  
+
+  
 color: var(--font-color);
 box-sizing: border-box;
 margin: 0px;
 font-family: 'Roboto', sans-serif;
 }
 
-header nav, .nav-wrapper {
+header nav, .nav-wrapper-custom {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   margin: 10px;
 }
 
-h1, h3 {
+h3, h4 {
   color: var(--secondary-color);
   margin: 10px;
 
@@ -61,11 +67,16 @@ div p {
 
 div .startbtn {
   color: var(--font-color);
-  background-color: var(--primary-color);
+  background: #EC6F66;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to top, #F3A183, #EC6F66);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to top, #F3A183, #EC6F66); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  
+
+
   border: none;
   padding: 5px 20px;
   margin:10px;
-  font-size: 1.2rem;
+  font-size: 24px;
   border-radius: 10px;
 }
 
@@ -78,7 +89,7 @@ div .startbtn:hover {
 }
 
 
-div .btn {
+div .btn-custom {
   display: flex;
   flex-direction: column;
   color: var(--font-color);
@@ -88,11 +99,32 @@ div .btn {
   margin:10px;
   font-size: 1.2rem;
   border-radius: 10px;
+  font-family: 'Roboto', sans-serif;
 }
 
-div .btn:hover {
+div .btn-custom:hover {
   background-color: var(--btn-hover);
 }
+
+div .btn-custom-in {
+  display: flex;
+  flex-direction: row;
+  color: var(--font-color);
+  background: #EC6F66;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to top, #F3A183, #EC6F66);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to top, #F3A183, #EC6F66); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  border: none;
+  padding: 5px 20px;
+  margin:10px;
+  font-size: 24px;
+  border-radius: 10px;
+  font-family: 'Roboto', sans-serif;
+}
+
+div .btn-custom-in:hover {
+  background-color: var(--btn-hover);
+}
+
 
 
 div, p, .key {

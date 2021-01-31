@@ -99,7 +99,7 @@ fetch('https://opentdb.com/api.php?amount=10&type=multiple')
       currentQuestion.answers.forEach(function (answers, i) {
         // create new button for each choice
         var answerNode = document.createElement("button");
-        answerNode.setAttribute("class", "btn");
+        answerNode.setAttribute("class", "btn-custom");
         answerNode.setAttribute("value", answers);
         answerNode.textContent = i + 1 + ". " + answers;
         // attach click event listener to each answer
