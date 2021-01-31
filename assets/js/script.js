@@ -193,10 +193,11 @@ fetch('https://opentdb.com/api.php?amount=10&type=multiple')
     function printHighscores() {
       //redirect to display screen
       titleScreen.setAttribute("class", "hide");
-      scoreDisplay.setAttribute("class", "show");
+      quizScreen.setAttribute("class", "hide");
       highscoreScreen.setAttribute("class", "hide");
       hideHighScoresLink.setAttribute("class", "hide");
       hideTime.setAttribute("class", "hide");
+      scoreDisplay.setAttribute("class", "show");
       // either get scores from localstorage or set to empty array
       var highscores = JSON.parse(window.localStorage.getItem("highscores")) || [];
       // sort highscores by score property in descending order
