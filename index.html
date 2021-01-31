@@ -54,17 +54,17 @@
 
       <!-- High Score End Screen -->
       <div class="highscore" id="highscore">
-        <h2>All done!</h2>
+        <h2 class="highscore">All done!</h2>
         <h3>Your final score is <span id="final-score">0</span></h3>
-        <label for="initials-area">Enter initials:</label>
+        <label class="highscore" for="initials-area">Enter initials:</label>
         <input type="text" name="initials-area" maxlength="4" id="initials">
         <button id="initials-submit-button" type="submit" class="btn">Submit</button>
       </div>
 
       <!-- Highscore Display Screen -->
-      <div id="highscore-display">
+      <div id="highscore-display" class="highscore">
         <div id="scores">
-          <h2 class="font">Highscores:</h2>
+          <h2 class="font highscore">Highscores:</h2>
           <ol id="display-scores"></ol>
           <a href="./index.html"><button id="return-btn" class="startbtn">Play Again</button></a>
           <button id="clear-btn" class="startbtn">Clear Highscores</button>
@@ -78,7 +78,6 @@
   </main>
 
   <script src="./assets/js/foxy.js"></script>
-  <script src="./assets/js/questions.js"></script>
   <script src="./assets/js/script.js"></script>
 </body>
 </html>

@@ -11,7 +11,7 @@ body {
 background: var(--background-color);
 color: var(--font-color);
 box-sizing: border-box;
-margin:10px 2rem;
+margin: 0px;
 font-family: 'Roboto', sans-serif;
 }
 
@@ -19,10 +19,12 @@ header nav, .nav-wrapper {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  margin: 10px;
 }
 
 h1, h3 {
   color: var(--secondary-color);
+  margin: 10px;
 
 } 
 
@@ -50,6 +52,7 @@ main, section, .quiz-wrapper {
 
 .start-quiz {
   text-align: center;
+  margin: 10px;
 }
 
 div p {
@@ -68,6 +71,10 @@ div .startbtn {
 
 div .startbtn:hover {
   background-color: var(--btn-hover);
+}
+
+.question-mini, .highscore {
+  margin: 10px;
 }
 
 
