@@ -93,29 +93,28 @@ fetch('https://opentdb.com/api.php?amount=10&type=multiple')
 
     for (var i = 0; i < 10; i++) {
   
-      // console.log(questionResults[i].question);
-      // console.log(questionResults[i].incorrect_answers)
-      // console.log(questionResults[i].correct_answer)
         var answersVar = [];
-        var correct_answerVar = questionResults[i].correct_answer;
+        
+        
         var questionsString = questionResults[i].question;
-        // console.log(incorrect_answersVar.split(',' , 4));
+
       
         for (var q = 0; q < 3; q++) {
       
           answersVar.push(questionResults[i].incorrect_answers[q]);
         }
       
-        answersVar.push(correct_answerVar);
+        answersVar.push(questionResults[i].correct_answer);
         
         questions[i] = {
         quizQuestion: questionsString.toString() ,
-        correct: correct_answerVar.toString() ,
+        correct: questionResults[i].correct_answer ,
         answers: answersVar
         
         }
-        
+        console.log(typeof questionResults[i].correct_answer); 
       }
+
 
 
     var currentQuestion = questions[currentQuestionIndex];
@@ -133,8 +132,7 @@ fetch('https://opentdb.com/api.php?amount=10&type=multiple')
       // create new button for each choice
       var answerNode = document.createElement("button");
       answerNode.setAttribute("class", "btn");
-      answerNode.setAttribute("value", currentQuestion.answers);
-      console.log(answers);
+      answerNode.setAttribute("value", answers);
       answerNode.textContent = i +1 + ". " + answers;
 
       // attach click event listener to each answer
@@ -150,9 +148,10 @@ fetch('https://opentdb.com/api.php?amount=10&type=multiple')
   // function to increase or decrease time with quesiton answer button click
   function questionClick() {
     // check if guessed wrong
-    console.log(questions[currentQuestionIndex].correct);
-
-    if (this.value !== questions[currentQuestionIndex].correct) {
+    // console.log(typeof questions[currentQuestionIndex].correct);
+    var test = this.value;
+    console.log(test);
+    if (this.value != questions[currentQuestionIndex].correct) {
       //penalize time
       time -= 10;
 
