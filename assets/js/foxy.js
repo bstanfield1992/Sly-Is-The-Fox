@@ -3,15 +3,15 @@ fetch('https://randomfox.ca/floof/')
     return response.json();
 })
 .then(function(response) {
-    console.log(response)
+    // console.log(response)
          var body = document.body;
     var fox = document.getElementById('foxImg');
     var image = response.image;
-    var imageEl = document.createElement('img');
+    var foxImgEl = document.createElement('img');
     body.appendChild(fox);
-    imageEl.setAttribute('src', image);
-    imageEl.setAttribute('class', 'fox-style')
-    fox.appendChild(imageEl);
+    foxImgEl.setAttribute('src', image);
+    foxImgEl.setAttribute('class', 'fox-style')
+    fox.appendChild(foxImgEl);
 })
 
 var foxFacts = [
@@ -89,4 +89,4 @@ var foxFacts = [
     
 ];
 
-console.log(foxFacts);
+// console.log(foxFacts);
