@@ -15,6 +15,12 @@ var hideHighScoresLink = document.querySelector("#view-highscores");
 var highscoreClick = document.querySelector(".hi-score-title");
 var hideTime = document.querySelector(".time");
 
+// element selector to add random colors for the question cards
+var quizCard = document.querySelector("#quiz-q-card")
+
+// array for random question card classes
+var randomCardColorClass = ["card-bg-1", "card-bg-2", "card-bg-2", "card-bg-4", "card-bg-5", "card-bg-6", "card-bg-7", "card-bg-8", "card-bg-9", "card-bg-10"]
+
 /* GLOBAL FUNCTIONS */
 
 // function to hide uneeded screens on load screen
