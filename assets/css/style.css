@@ -10,15 +10,11 @@
 body {
   background: #43C6AC;  /* fallback for old browsers */
   background: -webkit-linear-gradient(to right, #191654, #43C6AC);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #191654, #43C6AC); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  
-  
-
-  
-color: var(--font-color);
-box-sizing: border-box;
-margin: 0px;
-font-family: 'Roboto', sans-serif;
+  background: linear-gradient(to right, #191654, #43C6AC); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */  
+  color: var(--font-color);
+  box-sizing: border-box;
+  margin: 0px;
+  font-family: 'Roboto', sans-serif;
 }
 
 header nav, .nav-wrapper-custom {
@@ -178,4 +174,129 @@ div, p, .key {
   60%  { transform: translateX(2px);  }
   80%  { transform: translateX(-1px); }
   100% { transform: translateX(0);    }
+}
+
+/* Random Gradient Card Backgrounds Start */
+
+.card-bg-1 {
+
+  background: #0F2027;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #2C5364, #203A43, #0F2027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  border-radius: 15px;
+  border-style: solid;
+  border-width: 5px;
+  border-color:var(--accent-color);
+  box-shadow: 0px 0px 35px 0px var(--accent-color); 
+}
+
+.card-bg-2 {
+  background: #283c86;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #45a247, #283c86);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #45a247, #283c86); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  border-radius: 15px;
+  border-style: solid;
+  border-width: 5px;
+  border-color:var(--accent-color);
+  box-shadow: 0px 0px 35px 0px var(--accent-color); 
+}
+
+.card-bg-3 {
+  background: #C33764;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, #1D2671, #C33764);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #1D2671, #C33764); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  border-radius: 15px;
+  border-style: solid;
+  border-width: 5px;
+  border-color:var(--accent-color);
+  box-shadow: 0px 0px 35px 0px var(--accent-color); 
+}
+
+.card-bg-4 {
+  background: #200122;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to top, #6f0000, #200122);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to top, #6f0000, #200122); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  border-radius: 15px;
+  border-style: solid;
+  border-width: 5px;
+  border-color:var(--accent-color);
+  box-shadow: 0px 0px 35px 0px var(--accent-color); 
+}
+
+.card-bg-5 {
+  background: #41295a;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, #2F0743, #41295a);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #2F0743, #41295a); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  border-radius: 15px;
+  border-style: solid;
+  border-width: 5px;
+  border-color:var(--accent-color);
+  box-shadow: 0px 0px 35px 0px var(--accent-color); 
+}
+
+.card-bg-6 {
+  background: #2C3E50;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to top, #FD746C, #2C3E50);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to top, #FD746C, #2C3E50); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  border-radius: 15px;
+  border-style: solid;
+  border-width: 5px;
+  border-color:var(--accent-color);
+  box-shadow: 0px 0px 35px 0px var(--accent-color); 
+}
+
+.card-bg-7 {
+  background: #114357;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to top, #F29492, #114357);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to top, #F29492, #114357); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  border-radius: 15px;
+  border-style: solid;
+  border-width: 5px;
+  border-color:var(--accent-color);
+  box-shadow: 0px 0px 35px 0px var(--accent-color); 
+}
+
+.card-bg-8 {
+  background: #360033;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to top, #0b8793, #360033);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to top, #0b8793, #360033); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  border-radius: 15px;
+  border-style: solid;
+  border-width: 5px;
+  border-color:var(--accent-color);
+  box-shadow: 0px 0px 35px 0px var(--accent-color); 
+}
+
+.card-bg-9 {
+  background: #5C258D;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, #4389A2, #5C258D);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #4389A2, #5C258D); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  border-radius: 15px;
+  border-style: solid;
+  border-width: 5px;
+  border-color:var(--accent-color);
+  box-shadow: 0px 0px 35px 0px var(--accent-color); 
+}
+
+.card-bg-10 {
+  background: #0052D4;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to top, #6FB1FC, #4364F7, #0052D4);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to top, #6FB1FC, #4364F7, #0052D4); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  border-radius: 15px;
+  border-style: solid;
+  border-width: 5px;
+  border-color:var(--accent-color);
+  box-shadow: 0px 0px 35px 0px var(--accent-color); 
+}
+
+.card-bg-11 {
+  background: #0f0c29;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, #24243e, #302b63, #0f0c29);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #24243e, #302b63, #0f0c29); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  
+  border-radius: 15px;
+  border-style: solid;
+  border-width: 5px;
+  border-color:var(--accent-color);
+  box-shadow: 0px 0px 35px 0px var(--accent-color); 
 }

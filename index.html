@@ -37,51 +37,92 @@
   <main >
     <section class="quiz-wrapper">
       <!-- Quiz Question & Quiz Start Button (will disable this once quiz starts and use bottom section)-->
-      <div id="start-quiz" class="start-quiz" >
-        <h3 class="wiggle">
-          Sly Is The Fox Trivia Challenge! 
-        </h3>
-        <!-- Opening page info -->
-        <p>
-          Try to answer the following random trivia questions within the time limit given. Keep in mind that incorrect answers will penalize your score/time by 10 seconds! Correct answers will increase your score/time by 10 seconds! Good Luck!
-        </p>
-        <button id="start-quiz-btn" class="startbtn wiggle pulse">Start Quiz</button>
+
+      <div id="start-quiz" class="row">
+        <div class="col s12">
+          <div id="quiz-q-card" class="card-panel card-bg-11 wiggle">
+            <span class="">
+
+            <div  class="start-quiz" >
+              <h3 class="wiggle">
+                Sly Is The Fox Trivia Challenge! 
+              </h3>
+              <!-- Opening page info -->
+              <p>
+                Try to answer the following random trivia questions within the time limit given. Keep in mind that incorrect answers will penalize your score/time by 10 seconds! Correct answers will increase your score/time by 10 seconds! Good Luck!
+              </p>
+              <button id="start-quiz-btn" class="startbtn wiggle pulse">Start Quiz</button>
+            </div>
+
+          </span>
+        </div>
       </div>
+    </div>
 
       <!-- Quiz Questions after it starts Quiz Answer Buttons -->
-      <div id="quiz-section">
-        <div class= "question-mini">
-          <div class="questions">
-            <h4 id="quiz-question"></h4>
-          </div>
-        </div>
+      <div id="quiz-section" class="row">
+        <div class="col s12">
+          <div id="quiz-q-card" class="card-panel card-bg-1">
+            <span class="">
+      
+            <div>
+              <div class= "question-mini">
+                <div class="questions">
+                  <h4 id="quiz-question"></h4>
+                </div>
+              </div>
 
-        <!-- Quiz Answer & Key Section -->
-        <div class= "question-mini">
-          <div id="answers"></div>
-          <div id="key" class="key"></div> 
+              <!-- Quiz Answer & Key Section -->
+              <div class= "question-mini">
+                <div id="answers"></div>
+                <div id="key" class="key"></div> 
+              </div>
+            </div>
+
+            </span>
+          </div>
         </div>
       </div>
 
       <!-- High Score End Screen -->
-      <div class="highscore" id="highscore">
-        <h4 class="highscore">All done!</h4>
-        <h5 class="highscore">Your final score is <span id="final-score">0</span></h5>
-        <h5 class="highscore font" for="initials-area">Save Your Initials:</h5>
-        <input class="highscore" type="text" name="initials-area" maxlength="4" id="initials"><label class="highscore" for="textarea1">Enter your intials above:</label>
-        <button id="initials-submit-button"  class="btn-custom-in pulse wiggle" type="submit" name="action">Submit <i class="material-icons right">save</i>
-        </button>
+      <div  id="highscore" class="row">
+        <div class="col s12">
+          <div id="save-highscore-card" class="card-panel card-bg-11 wiggle">
+            <span class="">
+
+            <div class="highscore">
+              <h4 class="highscore">All done!</h4>
+              <h5 class="highscore">Your final score is <span id="final-score">0</span></h5>
+              <h5 class="highscore font" for="initials-area">Save Your Initials:</h5>
+              <input class="highscore" type="text" name="initials-area" maxlength="4" id="initials"><label class="highscore" for="textarea1">Enter your intials above:</label>
+              <button id="initials-submit-button"  class="btn-custom-in pulse wiggle" type="submit" name="action">Submit <i class="material-icons right">save</i>
+              </button>
+            </div>
+
+            </span>
+          </div>
+        </div>
       </div>
 
       <!-- Highscore Display Screen -->
-      <div id="highscore-display" class="highscore">
-        <div id="scores">
-          <h4 class="font highscore">Highscores:</h4>
-          <ol class="highscore" id="display-scores"></ol>
-          <div class="wiggle">
-          <a href="./index.html"><button id="return-btn" class="startbtn pulse">Play Again</button></a>
-          <button id="clear-btn" class="startbtn">Clear Highscores</button>
-        </div>
+      <div  id="highscore-display" class="row">
+        <div class="col s12">
+          <div id="highscore-display-card" class="card-panel card-bg-11 wiggle">
+            <span class="">
+
+            <div class="highscore">
+              <div id="scores">
+                <h4 class="font highscore">Highscores:</h4>
+                <ol class="highscore" id="display-scores"></ol>
+                <div class="wiggle">
+                <a href="./index.html"><button id="return-btn" class="startbtn pulse">Play Again</button></a>
+                <button id="clear-btn" class="startbtn">Clear Highscores</button>
+              </div>
+              </div>
+            </div>
+
+            </span>
+          </div>
         </div>
       </div>
 
