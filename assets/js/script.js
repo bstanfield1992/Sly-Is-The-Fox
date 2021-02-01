@@ -9,37 +9,6 @@ var quizScreen = document.querySelector("#quiz-section");
 var initialsEl = document.querySelector("#initials");
 var feedbackKey = document.querySelector("#key");
 var answersEl = document.querySelector("#answers");
-<<<<<<< HEAD
-var highscoreScreen = document.querySelector("#highscore")
-var scoreDisplay = document.querySelector("#highscore-display")
-var hideHighScoresLink = document.querySelector("#view-highscores")
-var hideTime = document.querySelector(".time")
-// Fox Img Element 
-var foxImgEl = document.querySelector("#foxImg")
-
-
-// function to hide uneeded screens on load screen
-function pageLoad() {
-  //only show start page. Hide other content.
-  highscoreScreen.setAttribute("class", "hide");
-  quizScreen.setAttribute("class", "hide");
-  scoreDisplay.setAttribute("class", "hide");
-
-  if (startQuiz == true){
-    return;
-  }
-
-}
-
-
-
-/* GLOBAL FUNCTIONS */
-
-// start quiz/game function 
-function startQuiz() {
-  //hide start screen and high score screen
-  titleScreen.setAttribute("class", "hide");
-=======
 var highscoreScreen = document.querySelector("#highscore");
 var scoreDisplay = document.querySelector("#highscore-display");
 var hideHighScoresLink = document.querySelector("#view-highscores");
@@ -51,78 +20,8 @@ var hideTime = document.querySelector(".time");
 // function to hide uneeded screens on load screen
 function pageLoad() {
   //only show start page. Hide other content.
->>>>>>> main
   highscoreScreen.setAttribute("class", "hide");
   scoreDisplay.setAttribute("class", "hide");
-<<<<<<< HEAD
-
-  //unhide questions section 
-  quizScreen.setAttribute("class", "show");
-
-  // start timer 
-  timer = setInterval(countdown, 1000);
-
-  // show starting time
-  var time = 75;
-  timerCountdown.textContent = time;
-
-  getQuestion();
-}
-
-// timer countdowns one second at a time function
-function countdown() {
-  time--;
-  timerCountdown.textContent = time;
-
-  // check if user ran out of time
-  if (time <= 0) {
-    quizEnd();
-  }
-}
-
-
-// function to get the question
-function getQuestion() {
-  var currentQuestion = questions[currentQuestionIndex];
-  console.log(currentQuestion)
-
-  // update title with current questions
-  var titleEl = document.getElementById("quiz-question");
-  titleEl.textContent = currentQuestion.quizQuestion;
-
-  // clear out any old question choices
-  answersEl.innerHTML = "";
-
-  // Loop over choices
-  currentQuestion.answers.forEach(function(answer, i) {
-    // create new button for each choice
-    var answerNode = document.createElement("button");
-    answerNode.setAttribute("class", "btn");
-    answerNode.setAttribute("value", answer)
-
-    answerNode.textContent = i +1 + ". " + answer;
-
-    // attach click event listener to each answer
-    answerNode.onclick = questionClick;
-
-    // display on the page 
-    answersEl.appendChild(answerNode);
-  });
-   
-  
-};
-
-// function to increase or decrease time with quesiton answer button click
-function questionClick() {
-  // check if guessed wrong
-  
-  if (this.value !== questions[currentQuestionIndex].correct) {
-    //penalize time
-    time -= 10;
-
-    if (time < 0) {
-      time = 0;
-=======
 }
 
 
@@ -156,7 +55,6 @@ fetch('https://opentdb.com/api.php?amount=10&type=multiple')
       timerCountdown.textContent = time;
       console.log(questions);
       getQuestion();
->>>>>>> main
     }
 
 
@@ -170,88 +68,6 @@ fetch('https://opentdb.com/api.php?amount=10&type=multiple')
       }
     }
 
-<<<<<<< HEAD
-    // display new time on page
-    timerCountdown.textContent = time;
-    feedbackKey.textContent = "Correct!";
-  };
-
-  // flash right/wrong feedback on page
-  feedbackKey.setAttribute("class", "key");
-  setTimeout(function() {
-    feedbackKey.setAttribute("class", "key hide");
-  }, 1000);
-
-  // move to next question
-  currentQuestionIndex++;
-
-  // check if we've run out of questions
-  if (currentQuestionIndex === questions.length) {
-    quizEnd();
-  } else {
-    getQuestion();
-  }
-}
-
-
-// end quiz function 
-function quizEnd () {
-  // stop timer
-  clearInterval(timer);
-
-  //show end screen
-  highscoreScreen.setAttribute("class", "show");
-
-  // show final score 
-  var finalScore = document.querySelector("#final-score");
-  finalScore.textContent = time;
-
-  // hide questions section
-  quizScreen.setAttribute("class", "hide");
-}
-
-
-
-// function to save highscore 
-function saveHighscore () {
-  // get value of input box
-  var initials = initialsEl.value
-
-  //make sure value wasn't empty 
-  if (initials !== "") {
-    // get saved scores from localStorage, or if not any set to empty array
-    var highscores = JSON.parse(window.localStorage.getItem("highscores")) || [];
-
-   // format new score object for current user 
-   var newScore = {
-     score:time, 
-     initials: initials
-   };
-
-   // save to localStorage 
-   highscores.push(newScore);
-   window.localStorage.setItem("highscores", JSON.stringify(highscores));
-
-   
-  }
-  printHighscores();
-}
-
-function checkForEnter(event) {
-  if (event.key === "Enter") {
-    saveHighscore();
-  }
-}
-
-// function to display high scores 
-function printHighscores() {
-  //redirect to display screen
-  titleScreen.setAttribute("class", "hide");
-  scoreDisplay.setAttribute("class", "show");
-  highscoreScreen.setAttribute("class", "hide");
-  hideHighScoresLink.setAttribute("class", "hide");
-  hideTime.setAttribute("class", "hide");
-=======
 
     // function to get the question
     function getQuestion() {
@@ -332,7 +148,6 @@ function printHighscores() {
         getQuestion();
       }
     }
->>>>>>> main
 
 
     // end quiz function 
@@ -421,15 +236,6 @@ function printHighscores() {
   })
 
   
-<<<<<<< HEAD
-// user clicks button to start quiz
-startQuizBtn.onclick = startQuiz;
-
-initials.onkeyup = checkForEnter;
-
-
-pageLoad();
-=======
   function randomizeAnswers(answers) {
     var random = [];
     for (var i = 0; i < 4; i++) {
@@ -441,4 +247,3 @@ pageLoad();
   }
 
   pageLoad();
->>>>>>> main
