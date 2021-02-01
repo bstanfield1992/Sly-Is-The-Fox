@@ -7,11 +7,11 @@ fetch('https://randomfox.ca/floof/')
          var body = document.body;
     var fox = document.getElementById('foxImg');
     var image = response.image;
-    var imageEl = document.createElement('img');
+    var foxImgEl = document.createElement('img');
     body.appendChild(fox);
-    imageEl.setAttribute('src', image);
-    imageEl.setAttribute('class', 'fox-style')
-    fox.appendChild(imageEl);
+    foxImgEl.setAttribute('src', image);
+    foxImgEl.className = "fox-style wiggle"
+    fox.appendChild(foxImgEl);
 })
 
 var foxFacts = [

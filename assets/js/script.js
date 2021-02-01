@@ -1,47 +1,46 @@
+/* GLOBAL VARIABLES */
+
+// Variables for DOM references..........................................................................................................................
+var timerCountdown = document.querySelector("#time");
+var startQuizBtn = document.querySelector("#start-quiz-btn");
+var initialBtn = document.querySelector("#initials-submit-button");
+var titleScreen = document.querySelector("#start-quiz");
+var quizScreen = document.querySelector("#quiz-section");
+var initialsEl = document.querySelector("#initials");
+var feedbackKey = document.querySelector("#key");
+var answersEl = document.querySelector("#answers");
+var highscoreScreen = document.querySelector("#highscore");
+var scoreDisplay = document.querySelector("#highscore-display");
+var hideHighScoresLink = document.querySelector("#view-highscores");
+var highscoreClick = document.querySelector(".hi-score-title");
+var hideTime = document.querySelector(".time");
+
+/* GLOBAL FUNCTIONS */
+
+// function to hide uneeded screens on load screen
+function pageLoad() {
+  //only show start page. Hide other content.
+  highscoreScreen.setAttribute("class", "hide");
+  quizScreen.setAttribute("class", "hide");
+  scoreDisplay.setAttribute("class", "hide");
+}
+
+
 fetch('https://opentdb.com/api.php?amount=10&type=multiple')
   .then(function (response) {
     return response.json();
   })
   .then(function (response) {
+    /* Variables to keep track of quiz state */
     var questionResults = response.results;
-    /* GLOBAL VARIABLES */
     var questions = [];
-    // Variables to keep track of quiz state..................................................................................................................
     // index's for question loop
     var currentQuestionIndex = 0;
     // var ref in timerCountdown event (start timer at 75s)
     var time = 75;
     var timer;
-    // Variables for DOM references..........................................................................................................................
-    var timerCountdown = document.querySelector("#time");
-    var startQuizBtn = document.querySelector("#start-quiz-btn");
-    var initialBtn = document.querySelector("#initials-submit-button");
-    var titleScreen = document.querySelector("#start-quiz");
-    var quizScreen = document.querySelector("#quiz-section");
-    var initialsEl = document.querySelector("#initials");
-    var feedbackKey = document.querySelector("#key");
-    var answersEl = document.querySelector("#answers");
-    var highscoreScreen = document.querySelector("#highscore")
-    var scoreDisplay = document.querySelector("#highscore-display")
-    var hideHighScoresLink = document.querySelector("#view-highscores")
-    var hideTime = document.querySelector(".time")
-    // Fox Img Element 
-    var foxImgEl = document.querySelector("#foxImg")
-    // function to hide uneeded screens on load screen
 
 
-    function pageLoad() {
-      //only show start page. Hide other content.
-      highscoreScreen.setAttribute("class", "hide");
-      quizScreen.setAttribute("class", "hide");
-      scoreDisplay.setAttribute("class", "hide");
-      if (startQuiz == true) {
-        return;
-      }
-    }
-
-
-    /* GLOBAL FUNCTIONS */
     // start quiz/game function 
     function startQuiz() {
       //hide start screen and high score screen
@@ -100,7 +99,7 @@ fetch('https://opentdb.com/api.php?amount=10&type=multiple')
       currentQuestion.answers.forEach(function (answers, i) {
         // create new button for each choice
         var answerNode = document.createElement("button");
-        answerNode.setAttribute("class", "btn");
+        answerNode.setAttribute("class", "btn-custom");
         answerNode.setAttribute("value", answers);
         answerNode.textContent = i + 1 + ". " + answers;
         // attach click event listener to each answer
@@ -196,10 +195,11 @@ fetch('https://opentdb.com/api.php?amount=10&type=multiple')
     function printHighscores() {
       //redirect to display screen
       titleScreen.setAttribute("class", "hide");
-      scoreDisplay.setAttribute("class", "show");
+      quizScreen.setAttribute("class", "hide");
       highscoreScreen.setAttribute("class", "hide");
       hideHighScoresLink.setAttribute("class", "hide");
       hideTime.setAttribute("class", "hide");
+      scoreDisplay.setAttribute("class", "show");
       // either get scores from localstorage or set to empty array
       var highscores = JSON.parse(window.localStorage.getItem("highscores")) || [];
       // sort highscores by score property in descending order
@@ -222,16 +222,21 @@ fetch('https://opentdb.com/api.php?amount=10&type=multiple')
       window.localStorage.removeItem("highscores");
       window.location.reload();
     }
+
+    // onClick for clear high scores btn 
     document.getElementById("clear-btn").onclick = clearHighscores;
+    // event listener for view high scores screen 
+    highscoreClick.addEventListener("click", printHighscores);
     // user clicks button to submit initials
     initialBtn.onclick = saveHighscore;
     // user clicks button to start quiz
     startQuizBtn.onclick = startQuiz;
     initials.onkeyup = checkForEnter;
-    pageLoad();
+    
     console.log(response);
   })
 
+  
   function randomizeAnswers(answers) {
     var random = [];
     for (var i = 0; i < 4; i++) {
@@ -241,4 +246,5 @@ fetch('https://opentdb.com/api.php?amount=10&type=multiple')
     }
     return random;
   }
-  
+
+  pageLoad();
