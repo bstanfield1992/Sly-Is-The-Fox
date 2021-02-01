@@ -55,6 +55,7 @@ fetch('https://opentdb.com/api.php?amount=10&type=multiple')
       var time = 75;
       timerCountdown.textContent = time;
       console.log(questions);
+      buildCard();
       getQuestion();
     }
 
@@ -245,6 +246,13 @@ fetch('https://opentdb.com/api.php?amount=10&type=multiple')
       answers.splice(randomNumber, 1);
     }
     return random;
+  }
+
+  function buildCard() {
+    var randomNumber = Math.floor(Math.random() + 1 * 10);
+    var quizCard = document.getElementById("#quiz-")
+
+
   }
 
   pageLoad();
