@@ -61,7 +61,7 @@ fetch('https://opentdb.com/api.php?amount=10&type=multiple')
       var time = 75;
       timerCountdown.textContent = time;
       console.log(questions);
-      buildCard();
+      
       getQuestion();
     }
 
@@ -79,6 +79,7 @@ fetch('https://opentdb.com/api.php?amount=10&type=multiple')
 
     // function to get the question
     function getQuestion() {
+      buildCard();
       for (var i = 0; i < 10; i++) {
         var answersVar = [];
         var questionsString = questionResults[i].question;
@@ -255,9 +256,12 @@ fetch('https://opentdb.com/api.php?amount=10&type=multiple')
   }
 
   function buildCard() {
-    var randomNumber = Math.floor(Math.random() + 1 * 10);
-    var quizCard = document.getElementById("#quiz-")
-
+    quizCard.classList.remove();
+    var randomNumber = Math.floor(Math.random() * 10);
+    console.log(randomNumber);
+    quizCard.classList.add("card-panel", randomCardColorClass[randomNumber]);
+    console.log(randomCardColorClass[randomNumber]);
+    console.log(quizCard.classList);
 
   }
 
