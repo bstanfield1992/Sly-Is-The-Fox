@@ -79,7 +79,9 @@ fetch('https://opentdb.com/api.php?amount=10&type=multiple')
 
     // function to get the question
     function getQuestion() {
+      // call function to decide the color of the card.
       buildCard();
+      // pull information from API.
       for (var i = 0; i < 10; i++) {
         var answersVar = [];
         var questionsString = questionResults[i].question;
@@ -90,6 +92,7 @@ fetch('https://opentdb.com/api.php?amount=10&type=multiple')
         var randomAnswers = randomizeAnswers(answersVar);
         // console.log(randomAnswers);
         questions[i] = {
+          // fill array with questions/answers/correct answer. also format everything.
           quizQuestion: questionsString.replace(/&quot;/g, '\"').replace(/&#039;/g, '\'').replace(/&eacute;/g, 'é').replace(/&uuml;/g, 'ü').replace(/&ouml;/g, 'ö').replace(/&amp;/g, '&').replace(/&iacute;/g, 'í').replace(/&Delta;/g, 'Δ').replace(/&aacute;/g, 'á').replace(/&oacute;/g, 'ó').replace(/&ntilde;/g, 'ñ').replace(/&uacute;/g, 'ú').replace(/&ocric;/g, 'ô') ,
           correct: questionResults[i].correct_answer.replace(/&quot;/g, '\"').replace(/&#039;/g, '\'').replace(/&eacute;/g, 'é').replace(/&uuml;/g, 'ü').replace(/&ouml;/g, 'ö').replace(/&amp;/g, '&').replace(/&iacute;/g, 'í').replace(/&Delta;/g, 'Δ').replace(/&aacute;/g, 'á').replace(/&oacute;/g, 'ó').replace(/&ntilde;/g, 'ñ').replace(/&uacute;/g, 'ú').replace(/&ocric;/g, 'ô') ,
           answers: randomAnswers
@@ -121,7 +124,6 @@ fetch('https://opentdb.com/api.php?amount=10&type=multiple')
     // function to increase or decrease time with quesiton answer button click
     function questionClick() {
       // check if guessed wrong
-      // console.log(typeof questions[currentQuestionIndex].correct);
       var test = this.value;
       console.log(test);
       if (this.value != questions[currentQuestionIndex].correct) {
@@ -138,6 +140,7 @@ fetch('https://opentdb.com/api.php?amount=10&type=multiple')
         time += 10;
         if (time < 0) {
           time = 0;
+          clearInterval(timer);
         }
         // display new time on page
         timerCountdown.textContent = time;
@@ -246,24 +249,29 @@ fetch('https://opentdb.com/api.php?amount=10&type=multiple')
     console.log(response);
   })
 
-  
+  // function to randomize the answers.
   function randomizeAnswers(answers) {
     var random = [];
     for (var i = 0; i < 4; i++) {
+      // creates random number
       var randomNumber = Math.floor(Math.random() * answers.length);
+      // uses random number to push to the random array where all the new answers will be.
       random.push(answers[randomNumber].replace(/&quot;/g, '\"').replace(/&#039;/g, '\'').replace(/&eacute;/g, 'é').replace(/&uuml;/g, 'ü').replace(/&ouml;/g, 'ö').replace(/&amp;/g, '&').replace(/&iacute;/g, 'í').replace(/&Delta;/g, 'Δ').replace(/&aacute;/g, 'á').replace(/&oacute;/g, 'ó').replace(/&ntilde;/g, 'ñ').replace(/&uacute;/g, 'ú').replace(/&ocric;/g, 'ô'));
+      // delete the option so answers aren't duplicated.
       answers.splice(randomNumber, 1);
     }
     return random;
   }
 
+  // function to change the color of the cards that the questions are on.
   function buildCard() {
 
     quizCard.removeAttribute("class");
     var randomNumber = Math.floor(Math.random() * randomCardColorClass.length);
     quizCard.classList.add("card-panel", randomCardColorClass[randomNumber]);
+    console.log(randomCardColorClass[randomNumber]);
     randomCardColorClass.splice(randomNumber, 1);
-    console.log(randomCardColorClass)
+    console.log(randomCardColorClass);
   }
 
   pageLoad();
