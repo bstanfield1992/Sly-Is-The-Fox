@@ -161,6 +161,7 @@ fetch('https://opentdb.com/api.php?amount=10&type=multiple')
 
     // end quiz function 
     function quizEnd() {
+      confetti.start()
       // stop timer
       clearInterval(timer);
       //show end screen
@@ -201,6 +202,7 @@ fetch('https://opentdb.com/api.php?amount=10&type=multiple')
 
     // function to display high scores 
     function printHighscores() {
+      confetti.start()
       //redirect to display screen
       titleScreen.setAttribute("class", "hide");
       quizScreen.setAttribute("class", "hide");
