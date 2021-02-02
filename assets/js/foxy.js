@@ -8,10 +8,12 @@ fetch('https://randomfox.ca/floof/')
     var fox = document.getElementById('foxImg');
     var image = response.image;
     var foxImgEl = document.createElement('img');
+    var favcon = document.getElementById('favicon')
     body.appendChild(fox);
     foxImgEl.setAttribute('src', image);
     foxImgEl.className = "fox-style wiggle"
     fox.appendChild(foxImgEl);
+    favcon.setAttribute('href', image)
 })
 
 var foxFacts = [
