@@ -15,6 +15,12 @@ var hideHighScoresLink = document.querySelector("#view-highscores");
 var highscoreClick = document.querySelector(".hi-score-title");
 var hideTime = document.querySelector(".time");
 
+// element selector to add random colors for the question cards
+var quizCard = document.querySelector("#quiz-q-card")
+
+// array for random question card classes
+var randomCardColorClass = ["card-bg-1", "card-bg-2", "card-bg-2", "card-bg-4", "card-bg-5", "card-bg-6", "card-bg-7", "card-bg-8", "card-bg-9", "card-bg-10"]
+
 /* GLOBAL FUNCTIONS */
 
 // function to hide uneeded screens on load screen
@@ -55,6 +61,7 @@ fetch('https://opentdb.com/api.php?amount=10&type=multiple')
       var time = 75;
       timerCountdown.textContent = time;
       console.log(questions);
+      
       getQuestion();
     }
 
@@ -72,6 +79,9 @@ fetch('https://opentdb.com/api.php?amount=10&type=multiple')
 
     // function to get the question
     function getQuestion() {
+      // call function to decide the color of the card.
+      buildCard();
+      // pull information from API.
       for (var i = 0; i < 10; i++) {
         var answersVar = [];
         var questionsString = questionResults[i].question;
@@ -80,16 +90,17 @@ fetch('https://opentdb.com/api.php?amount=10&type=multiple')
         }
         answersVar.push(questionResults[i].correct_answer);
         var randomAnswers = randomizeAnswers(answersVar);
-        console.log(randomAnswers);
+        // console.log(randomAnswers);
         questions[i] = {
-          quizQuestion: questionsString.replace(/&quot;/g, '\"').replace(/&#039;/g, '\'').replace(/&eacute;/g, 'é').replace(/&uuml;/g, 'ü').replace(/&ouml;/g, 'ö').replace(/&amp;/g, '&').replace(/&iacute;/g, 'í').replace(/&Delta;/g, 'Δ').replace(/&aacute;/g, 'á').replace(/&oacute;/g, 'ó') ,
-          correct: questionResults[i].correct_answer.replace(/&quot;/g, '\"').replace(/&#039;/g, '\'').replace(/&eacute;/g, 'é').replace(/&uuml;/g, 'ü').replace(/&ouml;/g, 'ö').replace(/&amp;/g, '&').replace(/&iacute;/g, 'í').replace(/&Delta;/g, 'Δ').replace(/&aacute;/g, 'á').replace(/&oacute;/g, 'ó') ,
+          // fill array with questions/answers/correct answer. also format everything.
+          quizQuestion: questionsString.replace(/&quot;/g, '\"').replace(/&#039;/g, '\'').replace(/&eacute;/g, 'é').replace(/&uuml;/g, 'ü').replace(/&ouml;/g, 'ö').replace(/&amp;/g, '&').replace(/&iacute;/g, 'í').replace(/&Delta;/g, 'Δ').replace(/&aacute;/g, 'á').replace(/&oacute;/g, 'ó').replace(/&ntilde;/g, 'ñ').replace(/&uacute;/g, 'ú').replace(/&ocric;/g, 'ô') ,
+          correct: questionResults[i].correct_answer.replace(/&quot;/g, '\"').replace(/&#039;/g, '\'').replace(/&eacute;/g, 'é').replace(/&uuml;/g, 'ü').replace(/&ouml;/g, 'ö').replace(/&amp;/g, '&').replace(/&iacute;/g, 'í').replace(/&Delta;/g, 'Δ').replace(/&aacute;/g, 'á').replace(/&oacute;/g, 'ó').replace(/&ntilde;/g, 'ñ').replace(/&uacute;/g, 'ú').replace(/&ocric;/g, 'ô') ,
           answers: randomAnswers
         }
-        console.log(typeof questionResults[i].correct_answer);
+        // console.log(typeof questionResults[i].correct_answer);
       }
       var currentQuestion = questions[currentQuestionIndex];
-      console.log(currentQuestion)
+      // console.log(currentQuestion)
       // update title with current questions
       var titleEl = document.getElementById("quiz-question");
       titleEl.textContent = currentQuestion.quizQuestion;
@@ -99,7 +110,7 @@ fetch('https://opentdb.com/api.php?amount=10&type=multiple')
       currentQuestion.answers.forEach(function (answers, i) {
         // create new button for each choice
         var answerNode = document.createElement("button");
-        answerNode.setAttribute("class", "btn");
+        answerNode.setAttribute("class", "btn-custom");
         answerNode.setAttribute("value", answers);
         answerNode.textContent = i + 1 + ". " + answers;
         // attach click event listener to each answer
@@ -113,7 +124,6 @@ fetch('https://opentdb.com/api.php?amount=10&type=multiple')
     // function to increase or decrease time with quesiton answer button click
     function questionClick() {
       // check if guessed wrong
-      // console.log(typeof questions[currentQuestionIndex].correct);
       var test = this.value;
       console.log(test);
       if (this.value != questions[currentQuestionIndex].correct) {
@@ -130,6 +140,7 @@ fetch('https://opentdb.com/api.php?amount=10&type=multiple')
         time += 10;
         if (time < 0) {
           time = 0;
+          clearInterval(timer);
         }
         // display new time on page
         timerCountdown.textContent = time;
@@ -153,6 +164,7 @@ fetch('https://opentdb.com/api.php?amount=10&type=multiple')
 
     // end quiz function 
     function quizEnd() {
+      confetti.start()
       // stop timer
       clearInterval(timer);
       //show end screen
@@ -193,6 +205,7 @@ fetch('https://opentdb.com/api.php?amount=10&type=multiple')
 
     // function to display high scores 
     function printHighscores() {
+      confetti.start()
       //redirect to display screen
       titleScreen.setAttribute("class", "hide");
       quizScreen.setAttribute("class", "hide");
@@ -236,15 +249,29 @@ fetch('https://opentdb.com/api.php?amount=10&type=multiple')
     console.log(response);
   })
 
-  
+  // function to randomize the answers.
   function randomizeAnswers(answers) {
     var random = [];
     for (var i = 0; i < 4; i++) {
+      // creates random number
       var randomNumber = Math.floor(Math.random() * answers.length);
-      random.push(answers[randomNumber].replace(/&quot;/g, '\"').replace(/&#039;/g, '\'').replace(/&eacute;/g, 'é').replace(/&uuml;/g, 'ü').replace(/&ouml;/g, 'ö').replace(/&amp;/g, '&').replace(/&iacute;/g, 'í').replace(/&Delta;/g, 'Δ').replace(/&aacute;/g, 'á').replace(/&oacute;/g, 'ó'));
+      // uses random number to push to the random array where all the new answers will be.
+      random.push(answers[randomNumber].replace(/&quot;/g, '\"').replace(/&#039;/g, '\'').replace(/&eacute;/g, 'é').replace(/&uuml;/g, 'ü').replace(/&ouml;/g, 'ö').replace(/&amp;/g, '&').replace(/&iacute;/g, 'í').replace(/&Delta;/g, 'Δ').replace(/&aacute;/g, 'á').replace(/&oacute;/g, 'ó').replace(/&ntilde;/g, 'ñ').replace(/&uacute;/g, 'ú').replace(/&ocric;/g, 'ô'));
+      // delete the option so answers aren't duplicated.
       answers.splice(randomNumber, 1);
     }
     return random;
+  }
+
+  // function to change the color of the cards that the questions are on.
+  function buildCard() {
+
+    quizCard.removeAttribute("class");
+    var randomNumber = Math.floor(Math.random() * randomCardColorClass.length);
+    quizCard.classList.add("card-panel", randomCardColorClass[randomNumber]);
+    console.log(randomCardColorClass[randomNumber]);
+    randomCardColorClass.splice(randomNumber, 1);
+    console.log(randomCardColorClass);
   }
 
   pageLoad();

@@ -4,69 +4,125 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sly Is The Fox Quiz</title>
+  <!-- Google Font CDN -->
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+   <!-- Materialize Compiled and minified CSS -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+   <!-- Materialize Compiled and minified JavaScript -->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+   <!-- Materialize Icon CDN -->
+   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+           
+   <!-- Custom CSS -->
   <link rel="stylesheet" href="./assets/css/style.css" />
 </head>
 
 <body>
 
   <header>
-    <nav class="nav-wrapper">
+    <div class="nav-wrapper-custom">
       <div class="hi-score">
-        <h3 id="view-highscores" class="hi-score-title">View High Scores</h3>
+        <h5 id="view-highscores" class="hi-score-title wiggle">View High Scores</h5>
       </div>
       <div>
-        <h3 class="time">Time: <span id="time">0</span></h3>
+        <h5 class="time">Time: <span id="time">0</span></h5>
       </div>
-    </nav>
+    </div>
   </header>
 
   <main >
     <section class="quiz-wrapper">
       <!-- Quiz Question & Quiz Start Button (will disable this once quiz starts and use bottom section)-->
-      <div id="start-quiz" class="start-quiz" >
-        <h1>
-          Sly Is The Fox Trivia Challenge! 
-        </h1>
-        <!-- Opening page info -->
-        <p>
-          Try to answer the following random trivia questions within the time limit given. Keep in mind that incorrect answers will penalize your score/time by 10 seconds! Correct answers will increase your score/time by 10 seconds! Good Luck!
-        </p>
-        <button id="start-quiz-btn" class="startbtn">Start Quiz</button>
+
+      <div id="start-quiz" class="row">
+        <div class="col s12">
+          <div class="card-panel card-bg-11 ">
+            <span class="">
+
+            <div  class="start-quiz" >
+              <h3 class="wiggle">
+                Sly Is The Fox Trivia Challenge! 
+              </h3>
+              <!-- Opening page info -->
+              <p>
+                Try to answer the following random trivia questions within the time limit given. Keep in mind that incorrect answers will penalize your score/time by 10 seconds! Correct answers will increase your score/time by 10 seconds! Good Luck!
+              </p>
+              <button id="start-quiz-btn" class="startbtn wiggle pulse">Start Quiz</button>
+            </div>
+
+          </span>
+        </div>
       </div>
+    </div>
 
       <!-- Quiz Questions after it starts Quiz Answer Buttons -->
-      <div id="quiz-section">
-        <div class= "question-mini">
-          <div class="questions">
-            <h1 id="quiz-question"></h1>
-          </div>
-        </div>
+      <div id="quiz-section" class="row">
+        <div class="col s12">
+          <div id="quiz-q-card" class="card-panel">
+            <span class="">
+      
+            <div>
+              <div class= "question-mini">
+                <div class="questions">
+                  <h4 id="quiz-question"></h4>
+                </div>
+              </div>
 
-        <!-- Quiz Answer & Key Section -->
-        <div class= "question-mini">
-          <div id="answers"></div>
-          <div id="key" class="key"></div> 
+              <!-- Quiz Answer & Key Section -->
+              <div class= "question-mini">
+                <div id="answers"></div>
+                <div id="key" class="key"></div> 
+              </div>
+            </div>
+
+            </span>
+          </div>
         </div>
       </div>
 
       <!-- High Score End Screen -->
-      <div class="highscore" id="highscore">
-        <h2 class="highscore">All done!</h2>
-        <h3>Your final score is <span id="final-score">0</span></h3>
-        <label class="highscore" for="initials-area">Enter initials:</label>
-        <input type="text" name="initials-area" maxlength="4" id="initials">
-        <button id="initials-submit-button" type="submit" class="btn">Submit</button>
+      <div  id="highscore" class="row">
+        <div class="col s12">
+          <div id="save-highscore-card" class="card-panel card-bg-11">
+            <span class="">
+
+            <div class="highscore">
+              <h4 class="highscore">All done!</h4>
+              <h5 class="highscore">Your final score is <span id="final-score">0</span></h5>
+              <h5 class="highscore font" for="initials-area">Save Your Initials:</h5>
+              <input class="highscore" type="text" name="initials-area" maxlength="4" id="initials"><label class="highscore" for="textarea1">Enter your intials above:</label>
+              <button id="initials-submit-button"  class="btn-custom-in pulse wiggle" type="submit" name="action">Submit <i class="material-icons right">save</i>
+              </button>
+            </div>
+
+            </span>
+          </div>
+        </div>
       </div>
 
       <!-- Highscore Display Screen -->
-      <div id="highscore-display" class="highscore">
-        <div id="scores">
-          <h2 class="font highscore">Highscores:</h2>
-          <ol class="highscore" id="display-scores"></ol>
-          <a href="./index.html"><button id="return-btn" class="startbtn">Play Again</button></a>
-          <button id="clear-btn" class="startbtn">Clear Highscores</button>
+      <div  id="highscore-display" class="row">
+        <div class="col s12">
+          <div id="highscore-display-card" class="card-panel card-bg-11">
+            <span class="">
+
+            <div class="highscore">
+              <div id="scores">
+                <h4 class="font highscore">Highscores:</h4>
+                <ol class="highscore" id="display-scores"></ol>
+                <div class="wiggle">
+                <a href="./index.html"><button id="return-btn" class="startbtn pulse">Play Again</button></a>
+                <button id="clear-btn" class="startbtn">Clear Highscores</button>
+              </div>
+              </div>
+            </div>
+
+            </span>
+          </div>
         </div>
       </div>
 
@@ -76,6 +132,7 @@
     </section>
   </main>
 
+  <script src="./assets/js/confetti.js"></script>
   <script src="./assets/js/foxy.js"></script>
   <script src="./assets/js/script.js"></script>
 </body>
