@@ -88,16 +88,16 @@ fetch('https://opentdb.com/api.php?amount=10&type=multiple')
         }
         answersVar.push(questionResults[i].correct_answer);
         var randomAnswers = randomizeAnswers(answersVar);
-        console.log(randomAnswers);
+        // console.log(randomAnswers);
         questions[i] = {
           quizQuestion: questionsString.replace(/&quot;/g, '\"').replace(/&#039;/g, '\'').replace(/&eacute;/g, 'é').replace(/&uuml;/g, 'ü').replace(/&ouml;/g, 'ö').replace(/&amp;/g, '&').replace(/&iacute;/g, 'í').replace(/&Delta;/g, 'Δ').replace(/&aacute;/g, 'á').replace(/&oacute;/g, 'ó').replace(/&ntilde;/g, 'ñ').replace(/&uacute;/g, 'ú').replace(/&ocric;/g, 'ô') ,
           correct: questionResults[i].correct_answer.replace(/&quot;/g, '\"').replace(/&#039;/g, '\'').replace(/&eacute;/g, 'é').replace(/&uuml;/g, 'ü').replace(/&ouml;/g, 'ö').replace(/&amp;/g, '&').replace(/&iacute;/g, 'í').replace(/&Delta;/g, 'Δ').replace(/&aacute;/g, 'á').replace(/&oacute;/g, 'ó').replace(/&ntilde;/g, 'ñ').replace(/&uacute;/g, 'ú').replace(/&ocric;/g, 'ô') ,
           answers: randomAnswers
         }
-        console.log(typeof questionResults[i].correct_answer);
+        // console.log(typeof questionResults[i].correct_answer);
       }
       var currentQuestion = questions[currentQuestionIndex];
-      console.log(currentQuestion)
+      // console.log(currentQuestion)
       // update title with current questions
       var titleEl = document.getElementById("quiz-question");
       titleEl.textContent = currentQuestion.quizQuestion;
@@ -258,13 +258,12 @@ fetch('https://opentdb.com/api.php?amount=10&type=multiple')
   }
 
   function buildCard() {
-    quizCard.classList.remove();
-    var randomNumber = Math.floor(Math.random() * 10);
-    console.log(randomNumber);
-    quizCard.classList.add("card-panel", randomCardColorClass[randomNumber]);
-    console.log(randomCardColorClass[randomNumber]);
-    console.log(quizCard.classList);
 
+    quizCard.removeAttribute("class");
+    var randomNumber = Math.floor(Math.random() * randomCardColorClass.length);
+    quizCard.classList.add("card-panel", randomCardColorClass[randomNumber]);
+    randomCardColorClass.splice(randomNumber, 1);
+    console.log(randomCardColorClass)
   }
 
   pageLoad();
