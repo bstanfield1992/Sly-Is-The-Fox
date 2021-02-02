@@ -213,9 +213,6 @@ fetch('https://opentdb.com/api.php?amount=10&type=multiple')
       hideHighScoresLink.setAttribute("class", "hide");
       hideTime.setAttribute("class", "hide");
       scoreDisplay.setAttribute("class", "show");
-      if (score < 0) {
-        score = 0;
-      }
       // either get scores from localstorage or set to empty array
       var highscores = JSON.parse(window.localStorage.getItem("highscores")) || [];
       // sort highscores by score property in descending order
