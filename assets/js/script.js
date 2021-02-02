@@ -271,7 +271,7 @@ fetch('https://opentdb.com/api.php?amount=10&type=multiple')
     quizCard.classList.add("card-panel", randomCardColorClass[randomNumber]);
     console.log(randomCardColorClass[randomNumber]);
     randomCardColorClass.splice(randomNumber, 1);
-    console.log(randomCardColorClass);
+    // console.log(randomCardColorClass);
   }
 
   pageLoad();
