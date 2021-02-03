@@ -1,13 +1,15 @@
+/* initial page color schemes */
 :root {
   --primary-color: rgb(224, 122, 95);
   --secondary-color: rgb(242, 204, 143);
   --background-color: rgb(61, 64, 91);
-  --accent-color: rgba(129, 178, 154, 0.794);
+  --accent-color: rgba(129, 178, 154);
   --font-color: rgb(244, 241, 222); 
   --btn-hover: rgb(94, 177, 191);
   --shadow-color: rgb(48, 43, 99);
 }
 
+/* default body, font colors, and mobile responsiveness */
 body {
   background: #43C6AC;  /* fallback for old browsers */
   background: -webkit-linear-gradient(to right, #191654, #43C6AC, #191654);  /* Chrome 10-25, Safari 5.1-6 */
@@ -67,6 +69,7 @@ div p {
 }
 
 
+/* start button on both home load page and highscore screen */
 div .startbtn {
   color: var(--font-color);
   background: #EC6F66;  /* fallback for old browsers */
@@ -87,6 +90,7 @@ div .startbtn:hover, div .startbtn:active {
 }
 
 
+/* customer buttom styling for questions */
 div .btn-custom {
   display: flex;
   flex-direction: column;
@@ -106,6 +110,8 @@ div .btn-custom:hover, div .btn-custom:active {
   font-weight: 900;
 }
 
+
+/* custom button styling for the initials end screen */
 div .btn-custom-in {
   display: flex;
   flex-direction: row;
@@ -128,7 +134,7 @@ div .btn-custom-in:hover, div .btn-custom-in:active {
 }
 
 
-
+/* amswer key styling - correct/wrong */
 div, p, .key {
   margin-top:5px;
 }
@@ -140,6 +146,8 @@ div, p, .key {
   border-top: 1px solid var(--accent-color);
 }
 
+
+/* hide and show block styles */
 .hide {
   display: none;
 }
@@ -148,6 +156,7 @@ div, p, .key {
   display: block;
 }
 
+/* fox image style */
 .fox-style {
   display: block;
   margin-left: auto;
@@ -163,6 +172,14 @@ div, p, .key {
   box-shadow: 0px 0px 35px 0px var(--shadow-color); 
 }
 
+.fox-avatar-style {
+  border-style: groove;
+  border-width: 2px;
+  border-color:var(--accent-color);
+  box-shadow: 0px 0px 35px 0px var(--shadow-color)
+}
+
+/* Wiggle Effect */
 .wiggle:hover, .wiggle:active {
   animation: wiggle 1s ease;
   animation-iteration-count: 1;
@@ -177,10 +194,22 @@ div, p, .key {
   100% { transform: translateX(0);    }
 }
 
+/* default load, end, and highscore screen card colors */
+.card-bg-default {
+  background: #0f0c29;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, #24243e, #302b63, #0f0c29);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #24243e, #302b63, #0f0c29); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  border-radius: 15px;
+  border-style: solid;
+  border-width: 5px;
+  border-color:var(--accent-color);
+  box-shadow: 0px 0px 35px 0px var(--shadow-color); 
+}
+
 /* Random Gradient Card Backgrounds Start */
 
+/* left to right - lighter teal to a darker teal/green */ 
 .card-bg-1 {
-
   background: #0F2027;  /* fallback for old browsers */
   background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);  /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to right, #2C5364, #203A43, #0F2027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
@@ -191,6 +220,7 @@ div, p, .key {
   box-shadow: 0px 0px 35px 0px var(--shadow-color); 
 }
 
+/* left to right navy blue to green */ 
 .card-bg-2 {
   background: #283c86;  /* fallback for old browsers */
   background: -webkit-linear-gradient(to left, #45a247, #283c86);  /* Chrome 10-25, Safari 5.1-6 */
@@ -202,6 +232,7 @@ div, p, .key {
   box-shadow: 0px 0px 35px 0px var(--shadow-color); 
 }
 
+/* top to bottom - dark navy blue to medium pink */
 .card-bg-3 {
   background: #C33764;  /* fallback for old browsers */
   background: -webkit-linear-gradient(to bottom, #1D2671, #C33764);  /* Chrome 10-25, Safari 5.1-6 */
@@ -213,10 +244,11 @@ div, p, .key {
   box-shadow: 0px 0px 35px 0px var(--shadow-color);
 }
 
+/* left to right - blue, purple, orange */
 .card-bg-4 {
-  background: #200122;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to top, #6f0000, #200122);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to top, #6f0000, #200122); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #1a2a6c;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #fdbb2d, #b21f1f, #1a2a6c);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #fdbb2d, #b21f1f, #1a2a6c); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   border-radius: 15px;
   border-style: solid;
   border-width: 5px;
@@ -224,6 +256,7 @@ div, p, .key {
   box-shadow: 0px 0px 35px 0px var(--shadow-color); 
 }
 
+/* top to bottom - dark to slightly lighter deep purple */
 .card-bg-5 {
   background: #41295a;  /* fallback for old browsers */
   background: -webkit-linear-gradient(to bottom, #2F0743, #41295a);  /* Chrome 10-25, Safari 5.1-6 */
@@ -235,10 +268,11 @@ div, p, .key {
   box-shadow: 0px 0px 35px 0px var(--shadow-color); 
 }
 
+/* left to right - purple to pink */
 .card-bg-6 {
-  background: #2C3E50;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to top, #FD746C, #2C3E50);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to top, #FD746C, #2C3E50); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #FF0099;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #493240, #FF0099);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #493240, #FF0099); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   border-radius: 15px;
   border-style: solid;
   border-width: 5px;
@@ -246,10 +280,11 @@ div, p, .key {
   box-shadow: 0px 0px 35px 0px var(--shadow-color); 
 }
 
+/*left to right - medium blue to pink */
 .card-bg-7 {
-  background: #114357;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to top, #F29492, #114357);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to top, #F29492, #114357); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #ff00cc;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #1d1d74, #ff00cc);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #1d1d74, #ff00cc); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   border-radius: 15px;
   border-style: solid;
   border-width: 5px;
@@ -257,10 +292,11 @@ div, p, .key {
   box-shadow: 0px 0px 35px 0px var(--shadow-color); 
 }
 
+/*left to right - dark green to yellow */
 .card-bg-8 {
-  background: #360033;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to top, #0b8793, #360033);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to top, #0b8793, #360033); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #00416A;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #b19f16, #0a7579, #00416A);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #b19f16, #0a7579, #00416A); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   border-radius: 15px;
   border-style: solid;
   border-width: 5px;
@@ -268,6 +304,7 @@ div, p, .key {
   box-shadow: 0px 0px 35px 0px var(--shadow-color); 
 }
 
+/* top to bottom - light to darker medium blue */
 .card-bg-9 {
   background: #5C258D;  /* fallback for old browsers */
   background: -webkit-linear-gradient(to bottom, #4389A2, #5C258D);  /* Chrome 10-25, Safari 5.1-6 */
@@ -279,10 +316,11 @@ div, p, .key {
   box-shadow: 0px 0px 35px 0px var(--shadow-color); 
 }
 
+/* left to right - purple, pink, orange, yellow */
 .card-bg-10 {
-  background: #0052D4;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to top, #6FB1FC, #4364F7, #0052D4);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to top, #6FB1FC, #4364F7, #0052D4); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #833ab4;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #da9029, #fd1d73, #5f1b8b);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #da9029, #fd1d1d, #5f1b8b); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   border-radius: 15px;
   border-style: solid;
   border-width: 5px;
@@ -290,14 +328,41 @@ div, p, .key {
   box-shadow: 0px 0px 35px 0px var(--shadow-color);
 }
 
+/* left to right - dark green left to lighter green right */
 .card-bg-11 {
-  background: #0f0c29;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to bottom, #24243e, #302b63, #0f0c29);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to bottom, #24243e, #302b63, #0f0c29); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  
+  background: #6A9113;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #141517, #6A9113);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #141517, #6A9113); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   border-radius: 15px;
   border-style: solid;
   border-width: 5px;
   border-color:var(--accent-color);
-  box-shadow: 0px 0px 35px 0px var(--shadow-color); 
+  box-shadow: 0px 0px 35px 0px var(--shadow-color);
 }
+
+/* left to right - burgendy to green */
+.card-bg-12 {
+  background: #a80077;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #59d308, #7e0259);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #59d308, #7e0259); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  border-radius: 15px;
+  border-style: solid;
+  border-width: 5px;
+  border-color:var(--accent-color);
+  box-shadow: 0px 0px 35px 0px var(--shadow-color);
+}
+
+/* left to right - dark to lighter blue */
+.card-bg-13 {
+  background: #000046;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #1CB5E0, #000046);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #1CB5E0, #000046); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  border-radius: 15px;
+  border-style: solid;
+  border-width: 5px;
+  border-color:var(--accent-color);
+  box-shadow: 0px 0px 35px 0px var(--shadow-color);
+}
+
+
+

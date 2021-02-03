@@ -16,6 +16,9 @@
 
    <!-- Materialize Icon CDN -->
    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+   <!-- Font Awesome Icon CDN -->
+   <script src="https://kit.fontawesome.com/79ab8d8fde.js" crossorigin="anonymous"></script>
            
    <!-- Custom CSS -->
   <link rel="stylesheet" href="./assets/css/style.css" />
@@ -42,7 +45,7 @@
 
       <div id="start-quiz" class="row">
         <div class="col s12">
-          <div class="card-panel card-bg-11 ">
+          <div class="card-panel card-bg-default">
             <span class="">
 
             <div  class="start-quiz" >
@@ -89,7 +92,7 @@
       <!-- High Score End Screen -->
       <div  id="highscore" class="row">
         <div class="col s12">
-          <div id="save-highscore-card" class="card-panel card-bg-11">
+          <div id="save-highscore-card" class="card-panel card-bg-default">
             <span class="">
 
             <div class="highscore">
@@ -106,10 +109,12 @@
         </div>
       </div>
 
+     
+
       <!-- Highscore Display Screen -->
       <div  id="highscore-display" class="row">
         <div class="col s12">
-          <div id="highscore-display-card" class="card-panel card-bg-11">
+          <div id="highscore-display-card" class="card-panel card-bg-default">
             <span class="">
 
             <div class="highscore">
@@ -119,6 +124,11 @@
                 <div class="wiggle">
                 <a href="./index.html"><button id="return-btn" class="startbtn pulse">Play Again</button></a>
                 <button id="clear-btn" class="startbtn">Clear Highscores</button>
+
+                <!-- Random Fox Fact Button -->
+                <button id="foxFactBtn"  class="btn-custom-in" type="submit" name="action">Randon Fox Fact  <i class="fas fa-question"></i>
+                </button>
+
               </div>
               </div>
             </div>
@@ -127,6 +137,26 @@
           </div>
         </div>
       </div>
+
+
+      <!-- Random Fox Fact Pop Up Screen -->
+      <div id="randomFactCard" class="col s12 m8 offset-m2 l6 offset-l3">
+        <div class="card-panel card-bg-default z-depth-1">
+          <div class="row valign-wrapper">
+            <div class="col s2">
+              <img src="assets\images\foxsml.jpg" alt="" class="circle responsive-img fox-avatar-style"> <!-- notice the "circle" class -->
+            </div>
+            <div class="col s10">
+              <span id="foxFact" class="font"></span>
+
+              <button id="view-highscores"   class="btn-custom-in" type="submit" name="action">View Highscores <i class="fas fa-star"></i>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+
 
 
 

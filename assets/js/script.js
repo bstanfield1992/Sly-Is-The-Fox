@@ -16,10 +16,16 @@ var highscoreClick = document.querySelector(".hi-score-title");
 var hideTime = document.querySelector(".time");
 
 // element selector to add random colors for the question cards
-var quizCard = document.querySelector("#quiz-q-card")
+var quizCard = document.querySelector("#quiz-q-card");
+
+// fox fact enitre card for hide/show 
+var randomFactCard = document.querySelector("#randomFactCard");
+
+// fox fact span insert factoid variable 
+var foxFact = document.querySelector("#foxFact")
 
 // array for random question card classes
-var randomCardColorClass = ["card-bg-1", "card-bg-2", "card-bg-2", "card-bg-4", "card-bg-5", "card-bg-6", "card-bg-7", "card-bg-8", "card-bg-9", "card-bg-10"]
+var randomCardColorClass = ["card-bg-1", "card-bg-2", "card-bg-2", "card-bg-4", "card-bg-5", "card-bg-6", "card-bg-7", "card-bg-8", "card-bg-9", "card-bg-10", "card-bg-11", "card-bg-12", "card-bg-13"]
 
 /* GLOBAL FUNCTIONS */
 
@@ -29,6 +35,7 @@ function pageLoad() {
   highscoreScreen.setAttribute("class", "hide");
   quizScreen.setAttribute("class", "hide");
   scoreDisplay.setAttribute("class", "hide");
+  randomFactCard.setAttribute("class", "hide");
 }
 
 
@@ -53,6 +60,7 @@ fetch('https://opentdb.com/api.php?amount=10&type=multiple')
       titleScreen.setAttribute("class", "hide");
       highscoreScreen.setAttribute("class", "hide");
       scoreDisplay.setAttribute("class", "hide");
+      randomFactCard.setAttribute("class", "hide");
       //unhide questions section 
       quizScreen.setAttribute("class", "show");
       // start timer 
@@ -174,6 +182,7 @@ fetch('https://opentdb.com/api.php?amount=10&type=multiple')
       finalScore.textContent = time;
       // hide questions section
       quizScreen.setAttribute("class", "hide");
+      randomFactCard.setAttribute("class", "hide");
     }
 
 
@@ -212,6 +221,7 @@ fetch('https://opentdb.com/api.php?amount=10&type=multiple')
       highscoreScreen.setAttribute("class", "hide");
       hideHighScoresLink.setAttribute("class", "hide");
       hideTime.setAttribute("class", "hide");
+      randomFactCard.setAttribute("class", "hide");
       scoreDisplay.setAttribute("class", "show");
       // either get scores from localstorage or set to empty array
       var highscores = JSON.parse(window.localStorage.getItem("highscores")) || [];
