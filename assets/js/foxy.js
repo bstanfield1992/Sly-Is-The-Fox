@@ -15,7 +15,7 @@ fetch('https://randomfox.ca/floof/')
     fox.appendChild(foxImgEl);
     favcon.setAttribute('href', image)
 })
-
+function getFacts () {
 var foxFacts = [
 
     "Random Fox Fact! – Foxes are one of the most well known wild animals in the UK, they are native to Britain.",
@@ -91,11 +91,12 @@ var foxFacts = [
     
 ];
  
-function getfacts (foxFacts) {
-    var randomFact = Math.floor(Math.random()*(foxFacts.length));
-    document.addEventListener('DOMContentLoaded', function() {
-        var elems = document.querySelectorAll('#randomFact');
-        var instances = M.Modal.init(elems, options);
-      });
+
+    var randomFact = Math.floor(Math.random()* foxFacts.length);
+
+    var factDisplay = document.querySelector('#randomFact');
+    factDisplay.textContent = foxFacts[randomFact];
+    console.log("being loaded");
+
  }
 // console.log(foxFacts);
