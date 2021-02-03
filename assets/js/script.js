@@ -174,6 +174,7 @@ fetch('https://opentdb.com/api.php?amount=10&type=multiple')
       finalScore.textContent = time;
       // hide questions section
       quizScreen.setAttribute("class", "hide");
+      getFacts();
     }
 
 
@@ -269,7 +270,7 @@ fetch('https://opentdb.com/api.php?amount=10&type=multiple')
     quizCard.removeAttribute("class");
     var randomNumber = Math.floor(Math.random() * randomCardColorClass.length);
     quizCard.classList.add("card-panel", randomCardColorClass[randomNumber]);
-    console.log(randomCardColorClass[randomNumber]);
+    // console.log(randomCardColorClass[randomNumber]);
     randomCardColorClass.splice(randomNumber, 1);
     // console.log(randomCardColorClass);
   }

@@ -90,5 +90,12 @@ var foxFacts = [
     
     
 ];
-
+ 
+function getfacts (foxFacts) {
+    var randomFact = Math.floor(Math.random()*(foxFacts.length));
+    document.addEventListener('DOMContentLoaded', function() {
+        var elems = document.querySelectorAll('#randomFact');
+        var instances = M.Modal.init(elems, options);
+      });
+ }
 // console.log(foxFacts);
