@@ -32,7 +32,7 @@ function pageLoad() {
 }
 
 
-fetch('https://opentdb.com/api.php?amount=10&type=multiple')
+fetch('https://opentdb.com/api.php?amount=10&category=10&type=multiple')
   .then(function (response) {
     return response.json();
   })
