@@ -1,5 +1,5 @@
 /* GLOBAL VARIABLES */
-
+window.alert('Hello Heather')
 // Variables for DOM references..........................................................................................................................
 var timerCountdown = document.querySelector("#time");
 var startQuizBtn = document.querySelector("#start-quiz-btn");
